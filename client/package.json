@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server -p3001 --watch db.json",
-    "eslint": "eslint . --fix",
+    "lint": "eslint . --fix",
     "cypress:open": "cypress open",
     "test:e2e": "cypress run"
   },
