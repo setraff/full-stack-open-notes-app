@@ -24,6 +24,7 @@ jobs:
           command: npm run --prefix client test:e2e
           start: npm run --prefix server start:test
           wait-on: http://localhost:3001
+          working-directory: ./client
       - name: Lint server
         run: npm run --prefix server lint
       - name: Test server
