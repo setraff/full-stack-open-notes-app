@@ -1,4 +1,4 @@
-import { Alert } from "react-bootstrap"
+import { Alert } from 'react-bootstrap'
 
 const Notification = ({ message }) => {
     if (message === null) {

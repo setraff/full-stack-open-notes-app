@@ -48,7 +48,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "cypress": "^12.17.2",
-    "eslint-plugin-cypress": "^2.13.3",
+    "eslint-plugin-cypress": "^2.15.1",
     "json-server": "^0.17.1"
   },
   "proxy": "http://localhost:3001"

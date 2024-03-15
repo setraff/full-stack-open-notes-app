@@ -1,0 +1,32 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deployment:
+    runs-on: ububtu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node_version: "20"
+      - name: Install dependencies & build
+        run: npm run --prefix server build
+      - name: Lint client
+        run: npm run --prefix client eslint
+      - name: Test e2e
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run --prefix client test:e2e
+          start: npm run --prefix server start:test
+          wait-on: http://localhost:3001
+      - name: Lint server
+        run: npm run --prefix server eslint
+      - name: Test server
+        run: npm run --prefix server test
+      - name: Trigger render deployment
+        if: ${{ github.event_name === 'push'  && !contains(join(github.event.commits.*.message), '#skip')  }}
+        run: curl https://api.render.com/deploy/srv-${{secrets.RENDER_SERVICE_ID}}?key=${{secrets.RENDER_API_KEY}}
+      - name:

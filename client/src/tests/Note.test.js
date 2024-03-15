@@ -9,24 +9,24 @@ test('renders content', async () => {
         content: 'Does not work anymore :(',
         important: true
     }
- 
+
     render(<Note note={note} />)
 
-    const element = screen.getByText('Does not work anymore :(', {exact: false})
+    const element = screen.getByText('Does not work anymore :(', { exact: false })
 
     expect(element).toBeDefined()
 })
 
 test('does not render this', () => {
-  const note = {
-    content: 'This is a reminder',
-    important: true
-  }
+    const note = {
+        content: 'This is a reminder',
+        important: true
+    }
 
-  render(<Note note={note} />)
+    render(<Note note={note} />)
 
-  const element = screen.queryByText('do not want this thing to be rendered')
-  expect(element).toBeNull()
+    const element = screen.queryByText('do not want this thing to be rendered')
+    expect(element).toBeNull()
 })
 
 test('clicking the button calls the event handler once', async () => {
