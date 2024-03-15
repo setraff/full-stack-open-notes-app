@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/notes/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3Q2OTY5NDIwIiwiaWQiOiI2NDcyMzM1ZDQ0N2UwZDZjMWJmMGM4NjgiLCJpYXQiOjE2OTA1NDA5NjgsImV4cCI6MTY5MDU0NDU2OH0.OxQYFmbDwr8xWaVUWQyy9XkIOO5qxEssJxs8GGFkbwA
+
+{
+    "content": "Bearer token test",
+    "important": true
+}
