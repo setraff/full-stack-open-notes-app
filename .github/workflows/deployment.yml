@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node_version: "20"
+      - name: Create env file
+        run: echo "${{ secrets.ENV }}" > ./server/.env
       - name: Install dependencies & build
         run: npm run --prefix server build
       - name: Lint client
