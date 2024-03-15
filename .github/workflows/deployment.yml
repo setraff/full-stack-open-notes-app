@@ -21,8 +21,8 @@ jobs:
       - name: Test e2e
         uses: cypress-io/github-action@v5
         with:
-          command: npm run --prefix client test:e2e
-          start: npm run --prefix server start:test
+          command: npm run test:e2e
+          start: npm run --prefix ../server start:test
           wait-on: http://localhost:3001
           working-directory: ./client
       - name: Lint server
