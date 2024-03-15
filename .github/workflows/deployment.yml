@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies & build
         run: npm run --prefix server build
       - name: Lint client
-        run: npm run --prefix client eslint
+        run: npm run --prefix client lint
       - name: Test e2e
         uses: cypress-io/github-action@v5
         with:
@@ -23,7 +23,7 @@ jobs:
           start: npm run --prefix server start:test
           wait-on: http://localhost:3001
       - name: Lint server
-        run: npm run --prefix server eslint
+        run: npm run --prefix server lint
       - name: Test server
         run: npm run --prefix server test
       - name: Trigger render deployment
