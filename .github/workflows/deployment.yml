@@ -2,7 +2,7 @@ name: Deployment Pipeline
 
 on:
   push:
-    branches: [main] # ROK
+    branches: [main] # ROK le pull request
   pull_request:
     branches: [main]
 
